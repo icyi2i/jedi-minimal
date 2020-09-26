@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'jedi-icons';
+  src:  url('../fonts/jedi-icons.eot?mb1gs4');
+  src:  url('../fonts/jedi-icons.eot?mb1gs4#iefix') format('embedded-opentype'),
+    url('../fonts/jedi-icons.ttf?mb1gs4') format('truetype'),
+    url('../fonts/jedi-icons.woff?mb1gs4') format('woff'),
+    url('../fonts/jedi-icons.svg?mb1gs4#jedi-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'jedi-icons' !important;
+  /* speak: never; */
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-add:before {
+  content: "\ea0a";
+}
+.icon-remove:before {
+  content: "\ea0f";
+}
+.icon-arrow-up:before {
+  content: "\ea32";
+}
+.icon-arrow-down:before {
+  content: "\ea36";
+}
+.icon-link:before {
+  content: "\ea7e";
+}
+.icon-image:before {
+  content: "\e912";
+}
+.icon-align-left:before {
+  content: "\e90c";
+}
+.icon-align-center:before {
+  content: "\e90d";
+}
+.icon-align-right:before {
+  content: "\e90e";
+}
+.icon-align-justify:before {
+  content: "\e90f";
+}
+.icon-indent-increase:before {
+  content: "\e910";
+}
+.icon-indent-decrease:before {
+  content: "\e911";
+}
+.icon-code:before {
+  content: "\e918";
+}
+.icon-list:before {
+  content: "\e9bb";
+}
+.icon-block-type:before {
+  content: "\ea5f";
+}
+.icon-bold:before {
+  content: "\ea62";
+}
+.icon-underline:before {
+  content: "\ea63";
+}
+.icon-italic:before {
+  content: "\ea64";
+}
+.icon-strikethrough:before {
+  content: "\ea65";
+}
+.icon-superscript:before {
+  content: "\ea6b";
+}
+.icon-subscript:before {
+  content: "\ea6c";
+}
+.icon-clear-formatting:before {
+  content: "\ea6f";
+}

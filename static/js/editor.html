@@ -1,0 +1,136 @@
+<div class="modal" tabindex="-1" role="dialog" id="jedi-editor-modal">
+<!-- <div class="container"> -->
+<div class="modal-dialog" role="document">
+<div class="modal-content m-auto">
+  <div class="modal-header">
+    <h5 class="modal-title">Jedi editor</h5>
+    <button type="button" data-dismiss="modal" class="close" aria-label="Close">
+      &times;</button>
+  </div>
+
+  <div class="modal-body">
+    <div id="jedi-editor" class="row mx-0 px-0">
+      <!-- Menu -->
+      <div id="jedi-menu" class="col-12 bg-light px-0">
+        <!-- Block manipulation buttons -->
+        <div class="row m-0 p-0">
+          <!-- Block operations - add, remove, move up/down -->
+          <div class="col-sm-6 col-lg-8 px-0 d-flex">
+            <div class="btn-group max-width my-auto" role="group" aria-label="Block level operations">
+              <button type="button" id="add-block-btn" class="btn btn-outline-dark col-md-3 px-0">
+                <span class="icon-add mx-auto"></span>
+                <span class="d-none d-lg-inline">Add</span>
+              </button>
+              <button type="button" id="remove-block-btn" class="btn btn-outline-dark col-md-3 px-0">
+                <span class="icon-remove mx-auto"></span>
+                <span class="d-none d-lg-inline">Remove</span>
+              </button>
+              <button type="button" id="move-block-up-btn" class="btn btn-outline-dark col-md-3 px-0">
+                <span class="icon-arrow-up mx-auto"></span>
+                <span class="d-none d-lg-inline">Move up</span>
+              </button>
+              <button type="button" id="move-block-down-btn" class="btn btn-outline-dark col-md-3 px-0">
+                <span class="icon-arrow-down mx-auto"></span>
+                <span class="d-none d-lg-inline">Move down</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 px-0 d-flex">
+            <!-- Block type -->
+            <div class="col-6 px-0 dropdown my-auto" id="block-type-selector">
+              <button type="button" class="btn btn-outline-dark dropdown-toggle max-width"
+                id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <h6 class="d-none d-md-inline">Block type</h6>
+                <span class="icon-block-type"></span>
+              </button>
+              <div class="dropdown-menu"
+                aria-labelledby="dropdownMenuButton">
+                <button type="button" class="dropdown-item normal" data-block-type="normal">Normal
+                    </button>
+                <button type="button" class="dropdown-item code" data-block-type="code"><span class="icon-code pr-2"></span>Code
+                    </button>
+                <button type="button" class="dropdown-item image" data-block-type="image"><span class="icon-image pr-2"></span>Image
+                    </button>
+                <button type="button" class="dropdown-item link" data-block-type="link"><span class="icon-link pr-2"></span>Link
+                    </button>
+                <button type="button" class="dropdown-item h1" data-block-type="h1">H1
+                        </button>
+                <button type="button" class="dropdown-item h2" data-block-type="h2">H2
+                        </button>
+                <button type="button" class="dropdown-item h3" data-block-type="h3">H3
+                        </button>
+                <button type="button" class="dropdown-item h4" data-block-type="h4">H4
+                        </button>
+                <button type="button" class="dropdown-item h5" data-block-type="h5">H5
+                        </button>
+                <button type="button" class="dropdown-item h6" data-block-type="h6">H6
+                        </button>
+                </div>
+            </div>
+
+            <!-- Block alignment -->
+            <div class="col-6 px-0 dropdown my-auto" id="block-align-selector">
+              <button type="button" class="btn btn-outline-dark dropdown-toggle max-width"
+                id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+              <h6 class="d-none d-md-inline">Alignment</h6>
+              <span class="icon-align-center"></span>
+              </button>
+              <div class="dropdown-menu"
+                aria-labelledby="dropdownMenuButton">
+                <button type="button" class="dropdown-item" data-block-align="text-left"><span class="pr-2 icon-align-left"></span>Left</button>
+                <button type="button" class="dropdown-item" data-block-align="text-center"><span class="pr-2 icon-align-center"></span>Center</button>
+                <button type="button" class="dropdown-item" data-block-align="text-right"><span class="pr-2 icon-align-right"></span>Right</button>
+                <button type="button" class="dropdown-item" data-block-align="text-justify"><span class="pr-2 icon-align-justify"></span>Justify</button>
+              </div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+
+      <!-- Writer -->
+      <div id="jedi-writer" class="col-12">
+      </div>
+    </div>
+
+    <template id="block-template">
+    <div class="jedi-block" placeholder="Write something" data-block-type="normal">
+    </div>
+    </template>
+
+    <div class="modal fade" id="link-input-modal" tabindex="-1" role="dialog" aria-labelledby="link-input-modal-label" aria-hidden="true">
+      <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="link-input-modal-label">Enter link and Caption</h5>
+        </div>
+        <div class="modal-body">
+          <label for="#modal-link-input">Link</label>
+          <input id="modal-link-input" class="form-control" type="text" placeholder="https://www.google.com">
+          <label for="#modal-text-input">Alternate text</label>
+          <input id="modal-text-input" class="form-control" type="text" placeholder="Google">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="link-input-modal-cancel">Cancel</button>
+          <button type="button" class="btn btn-primary" id="link-input-modal-save">Save changes</button>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <a download="true" hidden="true" id="download-content-html"></a>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary"
+      data-dismiss="modal" id="jedi-cancel-editing-button">Cancel</button>
+    <button type="button" class="btn btn-primary"
+      data-dismiss="modal" id="jedi-save-changes-button">Save changes</button>
+  </div>
+</div>
+</div>
+<!-- </div> -->
+</div>
