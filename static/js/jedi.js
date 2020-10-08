@@ -35,7 +35,7 @@ class Jedi{
         })
     }
 
-    getJediModalHTML = async () => (await fetch("/static/js/editor.html")).text()
+    getJediModalHTML = async () => (await fetch("./static/js/editor.html")).text()
 
     configure = () => {
         this.addBlockBtn.addEventListener("click", this.addBlock)
